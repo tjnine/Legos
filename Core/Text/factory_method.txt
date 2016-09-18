@@ -1,0 +1,5 @@
+One of the big advantages of using design patterns is the ease in which you can make changes in a class and not disrupt a much larger program. Coding to an interface makes it easy to keep the same interface but change the contents.
+
+One change would simplify the last example is to take out the text out of the concrete products. By placing the write ups into text files then loading them into variables, it would be easier to change the text contents - BUT concrete examples would be a lot cleaner. 
+
+In the new concrete product, a little routine adds the text to a private variable $socialNow, So instead of having a big messy jumble of text, the concrete product has five lines of code to place the write-up into a variable.

@@ -1,0 +1,22 @@
+The __clone() function
+The key to working with the Prototype design pattern in PHP is understanding how to use the built-in function __clone(). You really don't need to extend an abstract class that contains an abstract __clone() method, but the examples all show an abstract class including a __clone() method, and so this might prove useful in the further Prototype examples used in the following...
+
+The concrete class Person extends the CloneMe abstract class and is therefore an extension of the abstract class. In the simple example the instance of Person is instantiated by $worker. So now $worker is a Person object. Next, an instance variable $cloned, clones the $worker instance of Person. It has access to the same properties as $worker and can change them as a direct instance of the Person class would be able to.
+
+The clone keyword
+The __clone() method cannot be accessed directly. If a __clone() method has been included in a class, you can use the following format: 
+$anotherInstance = clone $someInstance;
+The clone keyword instantiates another instance of the same class as that of the cloned instance. PHP docs says (an object copy is created by using the clone keyword - which calls the objects __clone() method if defined in the class. An objects __clone() method cannot be called directly).
+
+Constructor does not relauch with clone
+There is one catch to the cloning process: the clone does not launch the action in the constructor function! Clones can use default assigned values gernerated by the constructor, but if a constructor generates an action such as printing a message. This means for the Prototype design pattern(and any other use of cloning) is that you should not depend on your constructor function for any output or return. 
+
+The constructor function should do no real work
+Points have been made that when a class instantiates and initializes its collaborators, the result tends to be inflexible and prematurely coupled design. When a constructor function outputs anything, it provides no options for the client other than to shoot out what the constructor sends, even if it does not want it. These points does not mean that a constructor function cannot assign values to properties when needed. Likewise, the client's constructor can be a good deal different than the other participants of a pattern because it is making requests of the participants. One way to deal with this is to omit the constructor function when using pattern classes unless you have a good reason to include them. Otherwise allow  operations to be called when needed and let the client take care of instantiation an cloning chores.
+
+With all three concrete prototype implementations (Marketing, Engineering, Management), each unique for its use but respecting the interface(abstract class IAcmePrototype), a single instance of each can be created and then cloned by as many instances as needed. The client class will fulfill the last role. Only clones will be used, and the information for each unique case is to be assigned to the clones using the getter/setter method.
+
+The clients constructor holds 3 private properties to be used to instantiate one of each of the 3 concrete prototype classes. The makeProto() method generates the necessary instances. Next an "employee" instance is created using the clone technique. The cloned instance then sends unique instance information to a setter method that uses type hinting so the method only accepts our interface object. All of the setter methods from our interface(abstract class) as well as the implemented setDept() methods from the concrete prototype classes are used by the cloned "employee". In order to use the data for each employee, the Client class uses inherited getter methods. You can add as many clones as required and you will only every need a single instantiation of one of the concrete prototype classes.
+
+
+
