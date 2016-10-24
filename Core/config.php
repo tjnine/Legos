@@ -1,9 +1,17 @@
 <?php
+session_start();
 
-$user = 'vagrant';
-$pass = 'vagrant'; 
+require_once __DIR__ .'/../vendor/autoload.php';
 
-$dsn = 'mysql:host=localhost;dbname=php7dev';
-$db = new PDO($dsn, $user, $pass);
 
+$GLOBALS['config'] = [
+    'cookie' => [
+        'cookie_name'   =>  'hash',
+        'cookie_expire' =>  604800
+    ],
+    'session' => [
+        'session_name'  =>  'user',
+        'token_name'    =>  'token'
+    ]
+];
 ?>

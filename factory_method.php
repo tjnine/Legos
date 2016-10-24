@@ -1,5 +1,4 @@
 <?php 
-require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/Core/config.php';
 
 ?>
@@ -15,10 +14,53 @@ require_once __DIR__.'/Core/config.php';
 <p>
 <?php
  $worker = new App\Models\DB\DbClient; 
- $result = $worker->getIt("person");
-	 foreach($result as $k){
-	 	echo "Hello {$k[1]}  {$k[2]}";
-	 }
+
+// Select select() test
+// $r = $worker->selectIt('person', ['id','>=', '1'])->results();
+// foreach($r as $k => $v) {
+// 	echo "this is test data for {$k[0]} - {$v[0]} <br />";
+// }
+
+// Select selectAll() test 	
+// $result = $worker->getIt("person");
+ // foreach($result as $k){
+ // 	echo "Hello {$k[1]}  {$k[2]} <br>";
+ // }
+
+// Select results() test
+// $results = $worker->getIt("person")->results();
+// echo "<ul class='list-group'>";
+// foreach($results as $r) {
+// 	echo "<li class='list-group-item'>{$r[1]}</li>";
+// }
+// echo "</ul>";
+
+// Select first() test
+// $first = $worker->getIt("person")->first();
+// print_r($first);
+
+// Delete delete() test
+// $worker->deleteIt('person', ['id', '=', 12]);
+
+// Update update() test
+// $worker->updateIt('person', 12, [
+// 	'fname'	=>  'kingpin',
+// 	'lname'	=>	'rollseye',
+// 	'email'	=>	'trapmusix@gmail.com'
+// 	]);
+
+//Insert insert() test
+// $worker->insertIt('person', [
+// 	'fname'	=>  'jambi',
+// 	'lname'	=>	'myeyes',
+// 	'email'	=>	'tool@gmail.com'
+// 	]);
+
+// Insert query() test
+// $a = 'testing again';
+// $test = $worker->queryIt("INSERT INTO person (fname) VALUES (?)",[$a]);f
+
+
  ?>	
 </p>
 			<p>

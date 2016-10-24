@@ -1,5 +1,5 @@
 <?php 
-require_once __DIR__.'/vendor/autoload.php';
+
 require_once __DIR__.'/Core/config.php';
 
 ?>
@@ -10,6 +10,14 @@ require_once __DIR__.'/Core/config.php';
 <body>
 <?php include __DIR__.'/Views/includes/header.php'; ?>
 	<div class="row">
+
+	 <?php
+	 #STATIC CLASS INSTANTIATION EXAMPLE
+
+	  // App\Models\Core\Config::get('session/session_name'); 
+
+
+	 ?>
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
