@@ -4,7 +4,8 @@
 - Composer
 - PHP7Dev vagrant box
 - PHP7
-- Bootstrap CSS/ JS
+- ES6
+- Bootstrap
 
 
 ## Pros
