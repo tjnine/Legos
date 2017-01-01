@@ -2,6 +2,11 @@
 
 require_once __DIR__.'/Core/config.php';
 
+/**
+ * For examples on using classes and patterns look at
+ * api.php, prototype.php, factory-method.php, adapter.php
+ * for more in-depth information on usage.
+ */
 
 ?>
 <html>

@@ -3,7 +3,7 @@ namespace App\Prototypes\Minimal;
 
 abstract class IPrototype
 {
-	public $eyeColor,
+	public     $eyeColor,
 		   $wingBeat,
 		   $unitEyes;
 
